@@ -84,9 +84,11 @@ a {
   margin: auto;
   text-decoration: none;
   margin: 20px;
+  z-index: 1;
 }
 h1 {
   color: #06b396;
+  z-index: 1;
 }
 main {
   height: 100%;
@@ -104,6 +106,7 @@ input {
   font-size: large;
   border-radius: 4px;
   margin: auto;
+  
 }
 .radioGrid {
   display: grid;
@@ -116,5 +119,6 @@ form {
   flex-direction: column;
   gap: 14px;
   margin: 2rem;
+  z-index: 1;
 }
 </style>

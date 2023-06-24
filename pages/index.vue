@@ -2,7 +2,7 @@
     <main>
         <h1>Menu</h1>
         <NuxtLink to="/diagnostic">Ir al Diagnóstico</NuxtLink>
-        <NuxtLink to="/redvsarbol">Ir al Comparativo</NuxtLink>
+        
     </main>
 </template>
 
@@ -26,6 +26,7 @@ main{
 }
 h1{
     color: #00B295;
+    z-index: 1;
 }
 a{
     background-color: #F1064A;
@@ -37,6 +38,7 @@ a{
     margin: auto;
     text-decoration: none;
     margin: 20px;
+    z-index: 1;
 }
 </style>
 

@@ -1,12 +1,16 @@
 <template>
   <main>
-    <h1>Resultado:</h1>
-    <div v-if="disease">
-      <p>Tienes: {{ enfermedadDetectada(disease)?.name }}</p>
-      <p>Descripcion: {{ enfermedadDetectada(disease)?.desc }}</p>
+    <div class="msg">
+      <h1>Resultado:</h1>
+      <div v-if="disease">
+        <p >Tienes: <span class="tittle" >{{ enfermedadDetectada(disease)?.name }}</span></p>
+        <p>Descripcion: {{ enfermedadDetectada(disease)?.desc }}</p>
+        <a :href="enfermedadDetectada(disease)?.url" class="btnvermas" target="_blank">Ver más</a>
+      </div>
+      <p class="alive alivte" v-else>"Estupendo, no se han detectado enfermedades. 🙌😃"</p>
     </div>
-    <p class="alive" v-else>Felicidades, estás sano</p>
     <NuxtLink to="/diagnostic">Regresar</NuxtLink>
+
   </main>
 </template>
 
@@ -65,9 +69,11 @@ main {
   align-items: center;
   justify-content: center;
 }
+
 h1 {
   color: #00b295;
 }
+
 a {
   background-color: #f1064a;
   color: white;
@@ -78,9 +84,13 @@ a {
   margin: auto;
   text-decoration: none;
   margin: 20px;
+  z-index: 1;
 }
+
 div {
-  width: 35%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
 }
 </style>
 
@@ -91,20 +101,56 @@ div {
 .slide-right-leave-active {
   transition: all 0.2s;
 }
+
 .slide-left-enter-from {
   opacity: 0;
   transform: translate(50px, 0);
 }
+
 .slide-left-leave-to {
   opacity: 0;
   transform: translate(-50px, 0);
 }
+
 .slide-right-enter-from {
   opacity: 0;
   transform: translate(-50px, 0);
 }
+
 .slide-right-leave-to {
   opacity: 0;
   transform: translate(50px, 0);
+}
+
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.801);
+  z-index: 1;
+}
+
+.btnvermas {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tittle{
+  font-size: 25px;
+  font-weight: 800;
+
+}
+.alivte{
+  margin-bottom: 50px;
+  font-size: 20px;
 }
 </style>
